@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Simple Vue</title>
+</head>
+<body>
+	<h1 id="name">{{name}}</h1>
+</body>
+<script type="text/javascript" src="./Observer.js"></script>
+<script type="text/javascript" src="./Watcher.js"></script>
+<script type="text/javascript" src="./index.js"></script>
+<script type="text/javascript">
+	var ele = document.querySelector('#name')
+	var simpleVue = new SimpleVue({
+		name: 'hello world'
+	}, ele, 'name')
+
+	window.setTimeout(function(){
+		console.log('name值改变了')
+		simpleVue.data.name = 'canfoo'
+	}, 2000)
+</script>
+</html>
